@@ -37,6 +37,9 @@ const editUserDeatils=async(token,userId,name,email)=>{
       }
   }
   const response=await axios.put(API_URL+userId,{userId,name,email},config)
+  if(response.data){
+    localStorage.setItem('user', JSON.stringify(response.data))
+  }
   
   return response.data
 }
@@ -50,7 +53,7 @@ const profileUpload = async(token, url) => {
   }
   const liveUser = JSON.parse(localStorage.getItem('user'))
   const response = await axios.post(API_URL + 'profile/upload',{url, liveUser}, config)
-alert(response.data)
+
 const userString = localStorage.getItem('user');
 
 if (userString) {

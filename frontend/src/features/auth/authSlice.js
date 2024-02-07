@@ -124,7 +124,7 @@ export const profileUpdate = createAsyncThunk('auth/profile', async(profileUrl,t
         .addCase(editUser.fulfilled, (state, action) => {
             state.isLoading = false
             state.isSuccess = true
-            state.user = action.payload.user
+            state.user = action.payload
         })
         .addCase(editUser.rejected, (state, action) => {
             state.isLoading = false

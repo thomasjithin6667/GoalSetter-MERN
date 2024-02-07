@@ -10,6 +10,7 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
+  isUserAdded:false,
   message: "",
 };
 
@@ -114,6 +115,27 @@ export const editUser = createAsyncThunk('admin/editUser', async ({userId, name,
   }
 })
 
+//adduser
+  export const addUser = createAsyncThunk(
+    'admin/register',
+    async (user, thunkAPI) => {
+     
+      try {
+        const token = thunkAPI.getState().adminAuth.admin.token
+        return await adminAuthService.addUser(user,token)
+      } catch (error) {
+        const message =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString()
+        return thunkAPI.rejectWithValue(message)
+      }
+    }
+  )
+
+
   export const adminAuthSlice = createSlice({
     name: "adminAuth",
     initialState,
@@ -123,6 +145,7 @@ export const editUser = createAsyncThunk('admin/editUser', async ({userId, name,
         state.isError = false;
         state.isSuccess = false;
         state.message = "";
+        state.isUserAdded=false;
       },
     },
     extraReducers: (builder) => {
@@ -178,6 +201,20 @@ export const editUser = createAsyncThunk('admin/editUser', async ({userId, name,
             state.isError = true
             state.message = action.payload
         })
+        .addCase(addUser.pending, (state) => {
+          state.isLoading = true
+      })
+      .addCase(addUser.fulfilled, (state, action) => {
+          state.isLoading = false
+          state.isSuccess = true
+          state.isUserAdded=true
+          state.users = action.payload.users
+      })
+      .addCase(addUser.rejected, (state, action) => {
+          state.isLoading = false
+          state.isError = true
+          state.message = action.payload
+      })
         .addCase(searchUser.pending, (state) => {
           state.isLoading = true;
         })

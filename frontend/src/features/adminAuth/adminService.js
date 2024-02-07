@@ -53,6 +53,18 @@ const editUserDeatils=async(token,userId,name,email)=>{
     return response.data
 }
 
+//add user
+const addUser=async(userData,token)=>{
+
+    const config={
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
+    }
+   
+    const response=await axios.post(API_URL+'adduser',{userData},config)
+    return response.data
+}
 //user search
 const searchUser=async(query,token)=>{
    
@@ -76,7 +88,8 @@ const adminAuthService={
     getAllUsers,
     userBlock,
     editUserDeatils,
-    searchUser
+    searchUser,
+    addUser
 
   
 }

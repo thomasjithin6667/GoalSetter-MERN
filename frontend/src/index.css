@@ -102,7 +102,7 @@ h3 {
 }
 
 .goal {
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
@@ -239,6 +239,10 @@ h3 {
   align-items: start;
   border: solid rgba(0, 0, 0, 0.149) 1px;
   border-radius: 20px;
+  background-image: url("https://i.pinimg.com/564x/be/19/50/be1950356c5de7b24020c9c388af7e10.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 .profile-info{
   display: flex;
@@ -291,6 +295,8 @@ h3 {
   width: 70%;
   margin: 0 auto;
   border-radius: 20px;
+
+
 }
 
 .adminLogin-card{
@@ -301,6 +307,8 @@ h3 {
   margin: 0 auto;
   border-radius: 20px;
   margin-top: 135px;
+
+
 }
 
 .profile-buttons{
@@ -411,4 +419,43 @@ height: 80px;
 .invalid-feedback{
   
   color: red;
+}
+
+.header-buttons{
+  display: flex;
+  gap: 10px;
+  
+}
+.goals-content{
+  max-width: 700px;
+  margin: 0 auto;
+}
+.goals p{
+  font-size: 14px;
+ 
+}
+
+#text::placeholder {
+  text-align: center;
+}
+
+.dashboard-content{
+  border:  solid black 1px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid rgba(0, 0, 0, 0.149) 1px;
+  background-image: url("https://i.pinimg.com/564x/be/19/50/be1950356c5de7b24020c9c388af7e10.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.adduser-card{
+  border: solid rgba(0, 0, 0, 0.149) 1px;
+  padding: 30px;
+  width: 70%;
+  margin: 100px;
+  border-radius: 20px;
+
+
 }

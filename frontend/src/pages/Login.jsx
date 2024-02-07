@@ -77,7 +77,7 @@ function Login() {
         <h1>
           <FaSignInAlt /> Login
         </h1>
-        <p>Login to user managment system</p>
+        <p>Login and Get Things Done</p>
       </section>
 
       <section className='form'>

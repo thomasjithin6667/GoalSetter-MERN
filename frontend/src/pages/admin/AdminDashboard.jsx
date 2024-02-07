@@ -51,6 +51,10 @@ function AdminDashboard() {
         return null;
       }
     
+      const onAddUser=(e)=>{
+        e.preventDefault()
+        navigate('/admin/adduser')
+        }
 
   return (
     <div className='container-1'>
@@ -75,7 +79,8 @@ function AdminDashboard() {
 
           </div>
           <div className='profile-buttons'>
-            <button className='btn-1'  > edit profile</button>
+        
+            <button onClick={onAddUser}className='btn-1'  > Add User</button>
             <button onClick={onLogout} className='btn'  > logout</button>
           </div>
    

@@ -49,7 +49,6 @@ const registerUser = asyncHandler(async (req, res) => {
   const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body
   
-
     const user = await User.findOne({ email })
   
     if (user) {
@@ -87,9 +86,15 @@ const userAccount=asyncHandler(async(req,res)=>{
 const editUser=asyncHandler(async(req,res)=>{
   const {userId,name,email}=req.body
   const user=await User.findByIdAndUpdate(userId,{name,email},{new:true})
- 
+
   if(user){
-      res.status(200).json({user})
+      res.status(200).json({
+        _id: user.id,
+        name: user.name,
+        email: user.email,
+        profileUrl: user.profileUrl,
+        token: req.token
+      })
   }else{
       res.status(404)
       throw new Error('User not Found')
