@@ -50,6 +50,15 @@ const profileUpload = async(token, url) => {
   }
   const liveUser = JSON.parse(localStorage.getItem('user'))
   const response = await axios.post(API_URL + 'profile/upload',{url, liveUser}, config)
+alert(response.data)
+const userString = localStorage.getItem('user');
+
+if (userString) {
+  const user = JSON.parse(userString);
+  user.profileUrl = response.data.profileUrl;
+  localStorage.setItem('user', JSON.stringify(user));
+}
+
   return response.data
 }
 

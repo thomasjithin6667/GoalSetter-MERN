@@ -139,8 +139,9 @@ export const profileUpdate = createAsyncThunk('auth/profile', async(profileUrl,t
           state.isSuccess = true;                
           state.user = {
               ...state.user,
-              profileUrl: action.payload
+              profileUrl: action.payload.profileUrl
           };
+         
       })
       
       .addCase(profileUpdate.rejected, (state, action) => {

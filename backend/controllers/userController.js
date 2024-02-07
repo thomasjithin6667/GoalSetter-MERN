@@ -113,7 +113,7 @@ const profileUpload = asyncHandler(async (req, res) => {
   }, { new: true });
 
   
-  res.status(200).json(user.profileUrl);
+  res.status(200).json(user);
 });
 
   

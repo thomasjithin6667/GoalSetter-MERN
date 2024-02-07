@@ -29,10 +29,10 @@ function Dashboard() {
   
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "zsfhd9xd");
-    data.append("cloud_name", "df4qw5lvy");
+    data.append("upload_preset", "elellcsz");
+    data.append("cloud_name", "dzkpcjjr8");
   
-    fetch("https://api.cloudinary.com/v1_1/df4qw5lvy/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/dzkpcjjr8/image/upload", {
       method: "post",
       body: data,
     })
