@@ -52,7 +52,7 @@ Admin Side:
 Provide step-by-step instructions on how to install and set up your project. Be sure to include any dependencies and prerequisites needed.
 
 ```bash
-$ git clone https://github.com/yourusername/projectname.git
+$ git clone https://github.com/thomasjithin6667/GoalSetter-MERN
 $ cd projectname
 $ npm install
 
